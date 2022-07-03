@@ -1,6 +1,6 @@
 .innocode-block-logo {
 	margin: 2em;
-    padding: 1em;
+	padding: 1em;
 
 	&__link,
 	&__image {
@@ -8,16 +8,17 @@
 	}
 
 	&__caption {
-	    &_left {
-		    text-align: left;
-	    }
 
-	    &_center {
-		    text-align: center;
-	    }
+		&_left {
+			text-align: left;
+		}
 
-	    &_right {
-		    text-align: right;
-	    }
+		&_center {
+			text-align: center;
+		}
+
+		&_right {
+			text-align: right;
+		}
 	}
 }

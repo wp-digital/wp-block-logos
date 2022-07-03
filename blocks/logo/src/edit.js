@@ -9,6 +9,7 @@ import {
 	RichText,
 	MediaUpload,
 	MediaUploadCheck,
+	/* eslint-disable-next-line @wordpress/no-unsafe-wp-apis */
 	__experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
 import {
@@ -126,14 +127,14 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		setIsEditingURL(false);
 	};
 
-	const scale = (naturalWidth, naturalHeight) => {
-		const imageRatio = naturalWidth / naturalHeight;
-		const width = Math.floor(Math.pow(imageRatio, scaleFactor / 1000) * WIDTH_BASE).toString();
-		const height = Math.floor(width / imageRatio).toString();
+	const scale = (nW, nH) => {
+		const ratio = nW / nH;
+		const w = Math.floor(Math.pow(ratio, scaleFactor / 1000) * WIDTH_BASE).toString();
+		const h = Math.floor(w / ratio).toString();
 
 		setAttributes({
-			width,
-			height,
+			width: w,
+			height: h,
 		});
 	};
 
