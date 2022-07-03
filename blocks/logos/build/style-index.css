@@ -1,0 +1,40 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./blocks/logos/src/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.innocode-block-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  width: 100%;
+}
+.innocode-block-logos.alignleft, .innocode-block-logos.alignright {
+  -webkit-margin-start: 0 !important;
+          margin-inline-start: 0 !important;
+  -webkit-margin-end: 0 !important;
+          margin-inline-end: 0 !important;
+  float: none !important;
+}
+.innocode-block-logos__header {
+  margin-bottom: 1em;
+}
+.innocode-block-logos__title, .innocode-block-logos__description {
+  text-align: center;
+}
+.innocode-block-logos__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.alignleft .innocode-block-logos__list, .innocode-block-logos__list_left {
+  justify-content: flex-start;
+}
+.alignright .innocode-block-logos__list, .innocode-block-logos__list_right {
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

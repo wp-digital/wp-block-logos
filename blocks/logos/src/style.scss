@@ -1,0 +1,43 @@
+.innocode-block-logos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1em;
+	width: 100%;
+
+  	&.alignleft,
+	&.alignright {
+	    margin-inline-start: 0 !important;
+	    margin-inline-end: 0 !important;
+	    float: none !important;
+  	}
+
+	&__header {
+		margin-bottom: 1em;
+	}
+
+	&__title,
+	&__description {
+		text-align: center;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 1em;
+
+		.alignleft &,
+		&_left {
+		  justify-content: flex-start;
+		}
+
+		.alignright &,
+		&_right {
+		  justify-content: flex-end;
+		}
+	}
+}

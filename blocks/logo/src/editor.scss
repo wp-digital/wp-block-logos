@@ -1,0 +1,25 @@
+.innocode-block-logo {
+
+	&__upload {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	    padding: 30px 40px;
+		width: 100%;
+	    min-height: 130px;
+		background-color: #f0f0f0;
+
+	  	.edit-post-visual-editor &.components-button {
+			padding: 30px 40px;
+		}
+
+		&:hover {
+			border-color: #ccc;
+		}
+
+		svg {
+			margin-bottom: 8px;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"name": "wp-block-logos",
+	"version": "1.0.0",
+	"description": "List of logos with links.",
+	"author": "Innocode",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build:logo": "wp-scripts build blocks/logo/src/index.js --output-path=blocks/logo/build/",
+		"build:logos": "wp-scripts build blocks/logos/src/index.js blocks/logos/src/view.js --output-path=blocks/logos/build/",
+		"build": "npm run build:logo && npm run build:logos",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:css:fix": "wp-scripts lint-style --fix",
+		"lint:js": "wp-scripts lint-js",
+		"lint:js:fix": "wp-scripts lint-js --fix",
+		"start:logo": "wp-scripts start blocks/logo/src/index.js --output-path=blocks/logo/build/",
+		"start:logos": "wp-scripts start blocks/logos/src/index.js --output-path=blocks/logos/build/",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^8.0.11",
+		"@wordpress/blocks": "^11.1.4",
+		"@wordpress/components": "^19.1.6",
+		"@wordpress/dom-ready": "^3.2.3",
+		"@wordpress/element": "^4.0.4",
+		"@wordpress/hooks": "^3.2.2",
+		"@wordpress/i18n": "^4.2.4",
+		"@wordpress/icons": "^9.2.0",
+		"@wordpress/primitives": "^3.0.4",
+		"lodash": "^4.17.21"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^19.2.2",
+		"prettier": "^2.5.1"
+	}
+}
