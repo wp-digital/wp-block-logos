@@ -143,9 +143,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 			scale(naturalWidth, naturalHeight);
 		}
 
-		if (backgroundColor) {
-			setAttributes({ backgroundColor });
-		}
+		setAttributes({ backgroundColor });
 	});
 
 	const image =

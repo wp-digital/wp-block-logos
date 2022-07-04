@@ -15,6 +15,7 @@ import {
 	HAS_TITLE_DEFAULT,
 	HAS_DESCRIPTION_DEFAULT,
 	SCALE_FACTOR_DEFAULT,
+	ALIGNMENT_DEFAULT,
 	BACKGROUND_COLOR_SCHEMES,
 	BACKGROUND_COLOR_DEFAULT,
 	ALLOWED_BLOCKS,
@@ -29,7 +30,7 @@ export default function Edit({ attributes, setAttributes }) {
 		hasDescription = HAS_DESCRIPTION_DEFAULT,
 		description,
 		scaleFactor = SCALE_FACTOR_DEFAULT,
-		alignment = 'none',
+		alignment = ALIGNMENT_DEFAULT,
 		backgroundColor = BACKGROUND_COLOR_DEFAULT,
 	} = attributes;
 

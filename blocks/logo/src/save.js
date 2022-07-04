@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 import { BLOCK_CLASS_NAME } from './constants';
-import { HAS_CAPTION_DEFAULT } from './constants/editor';
+import { HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT } from './constants/editor';
 
 export default function save({ attributes }) {
 	const {
@@ -17,7 +17,7 @@ export default function save({ attributes }) {
 		height,
 		hasCaption = HAS_CAPTION_DEFAULT,
 		caption,
-		captionAlignment,
+		captionAlignment = CAPTION_ALIGNMENT_DEFAULT,
 		backgroundColor,
 		invert,
 	} = attributes;

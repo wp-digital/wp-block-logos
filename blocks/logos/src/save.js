@@ -1,7 +1,13 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 import { BLOCK_CLASS_NAME } from './constants';
-import { TITLE_TAG, HAS_TITLE_DEFAULT, HAS_DESCRIPTION_DEFAULT, ALLOWED_BLOCKS } from './constants/editor';
+import {
+	TITLE_TAG,
+	HAS_TITLE_DEFAULT,
+	HAS_DESCRIPTION_DEFAULT,
+	ALIGNMENT_DEFAULT,
+	ALLOWED_BLOCKS,
+} from './constants/editor';
 
 export default function save({ attributes }) {
 	const {
@@ -9,7 +15,7 @@ export default function save({ attributes }) {
 		title,
 		hasDescription = HAS_DESCRIPTION_DEFAULT,
 		description,
-		alignment,
+		alignment = ALIGNMENT_DEFAULT,
 	} = attributes;
 
 	let listClassName = `${BLOCK_CLASS_NAME}__list`;

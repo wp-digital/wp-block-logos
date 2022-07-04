@@ -8,6 +8,8 @@ export const HAS_DESCRIPTION_DEFAULT = applyFilters('innocode.block-logos.has_de
 
 export const SCALE_FACTOR_DEFAULT = applyFilters('innocode.block-logos.scale_factor.default', 525);
 
+export const ALIGNMENT_DEFAULT = applyFilters('innocode.block-logos.alignment.default', 'none');
+
 export const BACKGROUND_COLOR_SCHEMES = applyFilters('innocode.block-logos.background_color.schemes', [
 	{
 		name: __('Dark', 'innocode-block-logos'),
