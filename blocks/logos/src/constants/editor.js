@@ -10,7 +10,7 @@ export const SCALE_FACTOR_DEFAULT = applyFilters('innocode.block-logos.scale_fac
 
 export const ALIGNMENT_DEFAULT = applyFilters('innocode.block-logos.alignment.default', 'none');
 
-export const BACKGROUND_COLOR_SCHEMES = applyFilters('innocode.block-logos.background_color.schemes', [
+export const COLOR_SCHEMES = applyFilters('innocode.block-logos.color.schemes', [
 	{
 		name: __('Dark', 'innocode-block-logos'),
 		color: '#000',
@@ -21,5 +21,6 @@ export const BACKGROUND_COLOR_SCHEMES = applyFilters('innocode.block-logos.backg
 	},
 ]);
 export const BACKGROUND_COLOR_DEFAULT = applyFilters('innocode.block-logos.background_color.default', undefined);
+export const COLOR_DEFAULT = applyFilters('innocode.block-logos.color.default', undefined);
 
 export const ALLOWED_BLOCKS = ['innocode/block-logo'];

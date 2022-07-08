@@ -13,7 +13,11 @@ registerBlockType('innocode/block-logo', {
 		className: false,
 	},
 	attributes,
-	usesContext: ['innocode/block-logos-scaleFactor', 'innocode/block-logos-backgroundColor'],
+	usesContext: [
+		'innocode/block-logos-scaleFactor',
+		'innocode/block-logos-backgroundColor',
+		'innocode/block-logos-color',
+	],
 	edit: Edit,
 	save,
 	icon,

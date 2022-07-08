@@ -4,6 +4,7 @@ import {
 	HAS_DESCRIPTION_DEFAULT,
 	SCALE_FACTOR_DEFAULT,
 	BACKGROUND_COLOR_DEFAULT,
+	COLOR_DEFAULT,
 } from './constants/editor';
 
 export default {
@@ -36,5 +37,9 @@ export default {
 	backgroundColor: {
 		type: 'string',
 		default: BACKGROUND_COLOR_DEFAULT,
+	},
+	color: {
+		type: 'string',
+		default: COLOR_DEFAULT,
 	},
 };

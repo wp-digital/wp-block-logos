@@ -16,8 +16,9 @@ import {
 	HAS_DESCRIPTION_DEFAULT,
 	SCALE_FACTOR_DEFAULT,
 	ALIGNMENT_DEFAULT,
-	BACKGROUND_COLOR_SCHEMES,
+	COLOR_SCHEMES,
 	BACKGROUND_COLOR_DEFAULT,
+	COLOR_DEFAULT,
 	ALLOWED_BLOCKS,
 } from './constants/editor';
 
@@ -32,6 +33,7 @@ export default function Edit({ attributes, setAttributes }) {
 		scaleFactor = SCALE_FACTOR_DEFAULT,
 		alignment = ALIGNMENT_DEFAULT,
 		backgroundColor = BACKGROUND_COLOR_DEFAULT,
+		color = COLOR_DEFAULT,
 	} = attributes;
 
 	const onChange = (key, value) => {
@@ -45,6 +47,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const onScaleFactorChange = (value) => onChange('scaleFactor', value);
 	const onAlignmentChange = (value) => onChange('alignment', value);
 	const onBackgroundColorChange = (value) => onChange('backgroundColor', value);
+	const onColorChange = (value) => onChange('color', value);
 
 	let listClassName = `${BLOCK_CLASS_NAME}__list`;
 
@@ -74,27 +77,33 @@ export default function Edit({ attributes, setAttributes }) {
 							onChange={onHasDescriptionChange}
 						/>
 					</PanelRow>
-					<PanelRow>
-						<RangeControl
-							label={__('Scale factor', 'innocode-block-logos')}
-							value={scaleFactor}
-							onChange={onScaleFactorChange}
-							withInputField={false}
-							allowReset
-							resetFallbackValue={SCALE_FACTOR_DEFAULT}
-							min={1}
-							max={1000}
-							step={1}
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ColorPalette
-							label={__('Background color', 'innocode-block-logos')}
-							colors={BACKGROUND_COLOR_SCHEMES}
-							value={backgroundColor}
-							onChange={onBackgroundColorChange}
-						/>
-					</PanelRow>
+					<RangeControl
+						label={__('Scale factor', 'innocode-block-logos')}
+						value={scaleFactor}
+						onChange={onScaleFactorChange}
+						withInputField={false}
+						allowReset
+						resetFallbackValue={SCALE_FACTOR_DEFAULT}
+						min={1}
+						max={1000}
+						step={1}
+					/>
+				</PanelBody>
+				<PanelBody title={__('Color', 'innocode-block-logos')} initialOpen={false}>
+					<legend>{__('Background', 'innocode-block-logos')}</legend>
+					<ColorPalette
+						colors={COLOR_SCHEMES}
+						value={backgroundColor}
+						onChange={onBackgroundColorChange}
+						className="components-color-list-picker__color-picker"
+					/>
+					<legend>{__('Text', 'innocode-block-logos')}</legend>
+					<ColorPalette
+						colors={COLOR_SCHEMES.slice().reverse()}
+						value={color}
+						onChange={onColorChange}
+						className="components-color-list-picker__color-picker"
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div className={`${BLOCK_CLASS_NAME}__header`}>

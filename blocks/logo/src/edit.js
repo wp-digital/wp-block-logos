@@ -52,8 +52,11 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		captionAlignment = CAPTION_ALIGNMENT_DEFAULT,
 		invert,
 	} = attributes;
-	const { 'innocode/block-logos-scaleFactor': scaleFactor, 'innocode/block-logos-backgroundColor': backgroundColor } =
-		context;
+	const {
+		'innocode/block-logos-scaleFactor': scaleFactor,
+		'innocode/block-logos-backgroundColor': backgroundColor,
+		'innocode/block-logos-color': color,
+	} = context;
 	const [isEditingURL, setIsEditingURL] = useState(false);
 	const opensLinkInNewTab = target === '_blank';
 
@@ -143,7 +146,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 			scale(naturalWidth, naturalHeight);
 		}
 
-		setAttributes({ backgroundColor });
+		setAttributes({ backgroundColor, color });
 	});
 
 	const image =
@@ -265,6 +268,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 						onChange={onCaptionChange}
 						inlineToolbar
 						className={captionClassName}
+						style={color ? { color } : undefined}
 					/>
 				</>
 			)}

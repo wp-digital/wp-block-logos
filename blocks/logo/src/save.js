@@ -19,6 +19,7 @@ export default function save({ attributes }) {
 		caption,
 		captionAlignment = CAPTION_ALIGNMENT_DEFAULT,
 		backgroundColor,
+		color,
 		invert,
 	} = attributes;
 
@@ -55,7 +56,12 @@ export default function save({ attributes }) {
 				image
 			)}
 			{hasCaption && !RichText.isEmpty(caption) && (
-				<RichText.Content tagName="figcaption" value={caption} className={captionClassName} />
+				<RichText.Content
+					tagName="figcaption"
+					value={caption}
+					className={captionClassName}
+					style={color ? { color } : undefined}
+				/>
 			)}
 		</figure>
 	);

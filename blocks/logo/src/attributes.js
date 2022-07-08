@@ -76,6 +76,9 @@ export default {
 	backgroundColor: {
 		type: 'string',
 	},
+	color: {
+		type: 'string',
+	},
 	invert: {
 		type: 'number',
 		default: 0,

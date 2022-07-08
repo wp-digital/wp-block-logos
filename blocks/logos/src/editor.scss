@@ -17,24 +17,24 @@
 			width: 100%;
 			margin-bottom: 1em;
 
-		    & > * {
-			    margin: 2em;
+			> * {
+				margin: 2em;
 			}
 		}
 	}
 
-    .block-editor-inner-blocks {
-	    margin: 0;
+	.block-editor-inner-blocks {
+		margin: 0;
 	}
 
 	&__list {
 
 		&_left .block-editor-block-list__layout { /* stylelint-disable-line */
-		    justify-content: flex-start;
+			justify-content: flex-start;
 		}
 
 		&_right .block-editor-block-list__layout { /* stylelint-disable-line */
-		    justify-content: flex-end;
+			justify-content: flex-end;
 		}
 	}
 }
