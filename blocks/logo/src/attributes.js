@@ -1,5 +1,5 @@
 import { BLOCK_CLASS_NAME } from './constants';
-import { HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT } from './constants/editor';
+import { HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT, HAS_ICON_DEFAULT } from './constants/editor';
 
 export default {
 	href: {
@@ -82,5 +82,12 @@ export default {
 	invert: {
 		type: 'number',
 		default: 0,
+	},
+	hasIcon: {
+		type: 'boolean',
+		default: HAS_ICON_DEFAULT,
+	},
+	icon: {
+		type: 'string',
 	},
 };

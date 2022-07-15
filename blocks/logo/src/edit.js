@@ -27,8 +27,18 @@ import {
 import { link, linkOff } from '@wordpress/icons';
 import { __ } from '@wordpress/i18n';
 
+import IconsPicker from '@innocode-digital/wp-component-icons-picker';
+
 import { BLOCK_CLASS_NAME, NEW_TAB_REL } from './constants';
-import { SIZE, ALLOWED_TYPES, WIDTH_BASE, HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT } from './constants/editor';
+import {
+	SIZE,
+	ALLOWED_TYPES,
+	WIDTH_BASE,
+	HAS_CAPTION_DEFAULT,
+	CAPTION_ALIGNMENT_DEFAULT,
+	HAS_ICON_DEFAULT,
+	ICONS,
+} from './constants/editor';
 
 import Logo from './icon';
 
@@ -51,6 +61,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		caption,
 		captionAlignment = CAPTION_ALIGNMENT_DEFAULT,
 		invert,
+		hasIcon = HAS_ICON_DEFAULT,
+		icon,
 	} = attributes;
 	const {
 		'innocode/block-logos-scaleFactor': scaleFactor,
@@ -109,6 +121,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 	const onCaptionChange = (value) => onChange('caption', value);
 	const onCaptionAlignmentChange = (value) => onChange('captionAlignment', value);
 	const onInvertChange = (value) => onChange('invert', value);
+	const onHasIconChange = () => onChange('hasIcon', !hasIcon);
+	const onIconChange = (value) => onChange('icon', value);
 
 	const startLinkEditing = () => {
 		setIsEditingURL(true);
@@ -149,36 +163,52 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		setAttributes({ backgroundColor, color });
 	});
 
-	const image =
-		attachmentId && url ? (
-			<img
-				src={url}
-				alt={alt}
-				width={width}
-				height={height}
-				title={title}
-				className={`${BLOCK_CLASS_NAME}__image`}
-				style={invert ? { filter: `invert(${invert}%)` } : undefined}
-			/>
-		) : (
-			<MediaUploadCheck>
-				<MediaUpload
-					onSelect={onLogoChange}
-					allowedTypes={ALLOWED_TYPES}
-					value={attachmentId}
-					render={({ open }) => (
-						<Button
-							onClick={open}
-							icon={<Icon icon={attachmentId ? Spinner : Logo} />}
-							iconSize={46}
-							text={__('Set logo', 'innocode-block-logos')}
-							label={__('Logo placeholder', 'innocode-block-logos')}
-							className={`${BLOCK_CLASS_NAME}__upload`}
-						/>
-					)}
+	let image = null;
+
+	if (ICONS.length && hasIcon) {
+		if (icon) {
+			const value = ICONS.find((item) => item.value === icon);
+
+			image = (
+				<Icon
+					icon={has(value, 'icon') ? value.icon : value.value}
+					className={`${BLOCK_CLASS_NAME}__icon`}
+					style={invert ? { filter: `invert(${invert}%)` } : undefined}
 				/>
-			</MediaUploadCheck>
-		);
+			);
+		}
+	} else {
+		image =
+			attachmentId && url ? (
+				<img
+					src={url}
+					alt={alt}
+					width={width}
+					height={height}
+					title={title}
+					className={`${BLOCK_CLASS_NAME}__image`}
+					style={invert ? { filter: `invert(${invert}%)` } : undefined}
+				/>
+			) : (
+				<MediaUploadCheck>
+					<MediaUpload
+						onSelect={onLogoChange}
+						allowedTypes={ALLOWED_TYPES}
+						value={attachmentId}
+						render={({ open }) => (
+							<Button
+								onClick={open}
+								icon={<Icon icon={attachmentId ? Spinner : Logo} />}
+								iconSize={46}
+								text={__('Set logo', 'innocode-block-logos')}
+								label={__('Logo placeholder', 'innocode-block-logos')}
+								className={`${BLOCK_CLASS_NAME}__upload`}
+							/>
+						)}
+					/>
+				</MediaUploadCheck>
+			);
+	}
 
 	let captionClassName = `${BLOCK_CLASS_NAME}__caption`;
 
@@ -202,7 +232,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 							onChange={onHasCaptionChange}
 						/>
 					</PanelRow>
-					{!!attachmentId && (
+					{(icon || attachmentId) && (
 						<PanelRow>
 							<RangeControl
 								label={__('Invert', 'innocode-block-logos')}
@@ -214,6 +244,25 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 								min={0}
 								max={100}
 								step={1}
+							/>
+						</PanelRow>
+					)}
+					{!!ICONS.length && (
+						<PanelRow>
+							<ToggleControl
+								label={__('Use icon', 'innocode-block-logos')}
+								checked={hasIcon}
+								onChange={onHasIconChange}
+							/>
+						</PanelRow>
+					)}
+					{!!ICONS.length && hasIcon && (
+						<PanelRow>
+							<IconsPicker
+								label={__('Icon', 'innocode-block-logos')}
+								icons={ICONS}
+								value={icon}
+								onChange={onIconChange}
 							/>
 						</PanelRow>
 					)}

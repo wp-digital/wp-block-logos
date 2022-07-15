@@ -6,3 +6,6 @@ export const WIDTH_BASE = applyFilters('innocode.block-logo.width_base', 75);
 
 export const HAS_CAPTION_DEFAULT = applyFilters('innocode.block-logo.has_caption.default', false);
 export const CAPTION_ALIGNMENT_DEFAULT = applyFilters('innocode.block-logo.caption_alignment.default', 'none');
+
+export const HAS_ICON_DEFAULT = applyFilters('innocode.block-logo.has_icon.default', false);
+export const ICONS = applyFilters('innocode.block-logo.icons', applyFilters('innocode.block.icons', []));

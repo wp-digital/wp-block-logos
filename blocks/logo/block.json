@@ -1,14 +1,14 @@
 {
 	"apiVersion": 2,
 	"name": "innocode/block-logo",
-    "version": "1.0.0",
-    "title": "Logo",
+	"version": "1.0.0",
+	"title": "Logo",
 	"category": "design",
 	"description": "Logo with link.",
 	"supports": {
 		"html": false
 	},
-    "parent": ["innocode/block-logos"],
+	"parent": ["innocode/block-logos"],
 	"textdomain": "innocode-block-logos",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
