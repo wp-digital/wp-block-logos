@@ -200,8 +200,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 								onClick={open}
 								icon={<Icon icon={attachmentId ? Spinner : Logo} />}
 								iconSize={46}
-								text={__('Set logo', 'innocode-block-logos')}
-								label={__('Logo placeholder', 'innocode-block-logos')}
+								text={__('Set logo', 'innocode-blocks')}
+								label={__('Logo placeholder', 'innocode-blocks')}
 								className={`${BLOCK_CLASS_NAME}__upload`}
 							/>
 						)}
@@ -224,10 +224,10 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 			style={backgroundColor ? { backgroundColor } : undefined}
 		>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'innocode-block-logos')} initialOpen={false}>
+				<PanelBody title={__('Settings', 'innocode-blocks')} initialOpen={false}>
 					<PanelRow>
 						<ToggleControl
-							label={__('Show caption', 'innocode-block-logos')}
+							label={__('Show caption', 'innocode-blocks')}
 							checked={hasCaption}
 							onChange={onHasCaptionChange}
 						/>
@@ -235,7 +235,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					{(icon || attachmentId) && (
 						<PanelRow>
 							<RangeControl
-								label={__('Invert', 'innocode-block-logos')}
+								label={__('Invert', 'innocode-blocks')}
 								value={invert}
 								onChange={onInvertChange}
 								withInputField={false}
@@ -249,35 +249,21 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					)}
 					{!!ICONS.length && (
 						<PanelRow>
-							<ToggleControl
-								label={__('Use icon', 'innocode-block-logos')}
-								checked={hasIcon}
-								onChange={onHasIconChange}
-							/>
+							<ToggleControl label={__('Use icon', 'innocode-blocks')} checked={hasIcon} onChange={onHasIconChange} />
 						</PanelRow>
 					)}
 					{!!ICONS.length && hasIcon && (
 						<PanelRow>
-							<IconsPicker
-								label={__('Icon', 'innocode-block-logos')}
-								icons={ICONS}
-								value={icon}
-								onChange={onIconChange}
-							/>
+							<IconsPicker label={__('Icon', 'innocode-blocks')} icons={ICONS} value={icon} onChange={onIconChange} />
 						</PanelRow>
 					)}
 				</PanelBody>
 			</InspectorControls>
 			<BlockControls>
 				<ToolbarGroup>
-					{!href && <ToolbarButton icon={link} title={__('Link', 'innocode-block-logos')} onClick={startLinkEditing} />}
+					{!href && <ToolbarButton icon={link} title={__('Link', 'innocode-blocks')} onClick={startLinkEditing} />}
 					{!!href && (
-						<ToolbarButton
-							icon={linkOff}
-							title={__('Unlink', 'innocode-block-logos')}
-							onClick={unlink}
-							isActive={true}
-						/>
+						<ToolbarButton icon={linkOff} title={__('Unlink', 'innocode-blocks')} onClick={unlink} isActive={true} />
 					)}
 				</ToolbarGroup>
 			</BlockControls>
@@ -312,8 +298,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					<RichText
 						tagName="figcaption"
 						value={caption}
-						aria-label={__('Logo caption text', 'innocode-block-logos')}
-						placeholder={__('Add caption', 'innocode-block-logos')}
+						aria-label={__('Logo caption text', 'innocode-blocks')}
+						placeholder={__('Add caption', 'innocode-blocks')}
 						onChange={onCaptionChange}
 						inlineToolbar
 						className={captionClassName}

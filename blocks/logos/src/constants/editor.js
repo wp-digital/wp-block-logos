@@ -12,11 +12,11 @@ export const ALIGNMENT_DEFAULT = applyFilters('innocode.block-logos.alignment.de
 
 export const COLOR_SCHEMES = applyFilters('innocode.block-logos.color.schemes', [
 	{
-		name: __('Dark', 'innocode-block-logos'),
+		name: __('Dark', 'innocode-blocks'),
 		color: '#000',
 	},
 	{
-		name: __('Light', 'innocode-block-logos'),
+		name: __('Light', 'innocode-blocks'),
 		color: '#fff',
 	},
 ]);

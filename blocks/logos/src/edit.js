@@ -62,23 +62,19 @@ export default function Edit({ attributes, setAttributes }) {
 			})}
 		>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'innocode-block-logos')}>
+				<PanelBody title={__('Settings', 'innocode-blocks')}>
 					<PanelRow>
-						<ToggleControl
-							label={__('Show title', 'innocode-block-logos')}
-							checked={hasTitle}
-							onChange={onHasTitleChange}
-						/>
+						<ToggleControl label={__('Show title', 'innocode-blocks')} checked={hasTitle} onChange={onHasTitleChange} />
 					</PanelRow>
 					<PanelRow>
 						<ToggleControl
-							label={__('Show description', 'innocode-block-logos')}
+							label={__('Show description', 'innocode-blocks')}
 							checked={hasDescription}
 							onChange={onHasDescriptionChange}
 						/>
 					</PanelRow>
 					<RangeControl
-						label={__('Scale factor', 'innocode-block-logos')}
+						label={__('Scale factor', 'innocode-blocks')}
 						value={scaleFactor}
 						onChange={onScaleFactorChange}
 						withInputField={false}
@@ -89,15 +85,15 @@ export default function Edit({ attributes, setAttributes }) {
 						step={1}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'innocode-block-logos')} initialOpen={false}>
-					<legend>{__('Background', 'innocode-block-logos')}</legend>
+				<PanelBody title={__('Color', 'innocode-blocks')} initialOpen={false}>
+					<legend>{__('Background', 'innocode-blocks')}</legend>
 					<ColorPalette
 						colors={COLOR_SCHEMES}
 						value={backgroundColor}
 						onChange={onBackgroundColorChange}
 						className="components-color-list-picker__color-picker"
 					/>
-					<legend>{__('Text', 'innocode-block-logos')}</legend>
+					<legend>{__('Text', 'innocode-blocks')}</legend>
 					<ColorPalette
 						colors={COLOR_SCHEMES.slice().reverse()}
 						value={color}
@@ -111,7 +107,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText
 						tagName={TITLE_TAG}
 						value={title}
-						placeholder={__('Title', 'innocode-block-logos')}
+						placeholder={__('Title', 'innocode-blocks')}
 						onChange={onTitleChange}
 						className={`${BLOCK_CLASS_NAME}__title`}
 					/>
@@ -121,7 +117,7 @@ export default function Edit({ attributes, setAttributes }) {
 						tagName="div"
 						multiline="p"
 						value={description}
-						placeholder={__('Description', 'innocode-block-logos')}
+						placeholder={__('Description', 'innocode-blocks')}
 						onChange={onDescriptionChange}
 						className={`${BLOCK_CLASS_NAME}__description`}
 					/>
