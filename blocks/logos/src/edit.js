@@ -127,7 +127,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<BlockControls>
 					<AlignmentToolbar value={alignment} onChange={onAlignmentChange} />
 				</BlockControls>
-				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} orientation="horizontal" />
 			</div>
 		</div>
 	);
