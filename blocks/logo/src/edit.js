@@ -232,7 +232,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 							onChange={onHasCaptionChange}
 						/>
 					</PanelRow>
-					{(icon || attachmentId) && (
+					{!!(icon || attachmentId) && (
 						<PanelRow>
 							<RangeControl
 								label={__('Invert', 'innocode-blocks')}

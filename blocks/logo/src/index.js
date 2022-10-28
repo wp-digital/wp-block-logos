@@ -21,5 +21,5 @@ registerBlockType('innocode/block-logo', {
 	edit: Edit,
 	save,
 	icon,
-	parent: ['innocode/block-logos'],
+	parent: ['innocode/block-logos', 'innocode/block-slide'],
 });
