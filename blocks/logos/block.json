@@ -1,16 +1,15 @@
 {
 	"apiVersion": 2,
-	"name": "innocode/block-logos",
-	"version": "1.2.3",
+	"name": "wpd/block-logos",
+	"version": "1.3.0",
 	"title": "Logos",
 	"category": "design",
 	"description": "List for logos.",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "innocode-blocks",
+	"textdomain": "wpd-blocks",
 	"editorScript": "file:./build/index.js",
-	"script": "file:./build/view.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"
 }

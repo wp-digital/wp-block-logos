@@ -62,19 +62,19 @@ export default function Edit({ attributes, setAttributes }) {
 			})}
 		>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'innocode-blocks')}>
+				<PanelBody title={__('Settings', 'wpd-blocks')}>
 					<PanelRow>
-						<ToggleControl label={__('Show title', 'innocode-blocks')} checked={hasTitle} onChange={onHasTitleChange} />
+						<ToggleControl label={__('Show title', 'wpd-blocks')} checked={hasTitle} onChange={onHasTitleChange} />
 					</PanelRow>
 					<PanelRow>
 						<ToggleControl
-							label={__('Show description', 'innocode-blocks')}
+							label={__('Show description', 'wpd-blocks')}
 							checked={hasDescription}
 							onChange={onHasDescriptionChange}
 						/>
 					</PanelRow>
 					<RangeControl
-						label={__('Scale factor', 'innocode-blocks')}
+						label={__('Scale factor', 'wpd-blocks')}
 						value={scaleFactor}
 						onChange={onScaleFactorChange}
 						withInputField={false}
@@ -85,15 +85,15 @@ export default function Edit({ attributes, setAttributes }) {
 						step={1}
 					/>
 				</PanelBody>
-				<PanelBody title={__('Color', 'innocode-blocks')} initialOpen={false}>
-					<legend>{__('Background', 'innocode-blocks')}</legend>
+				<PanelBody title={__('Color', 'wpd-blocks')} initialOpen={false}>
+					<legend>{__('Background', 'wpd-blocks')}</legend>
 					<ColorPalette
 						colors={COLOR_SCHEMES}
 						value={backgroundColor}
 						onChange={onBackgroundColorChange}
 						className="components-color-list-picker__color-picker"
 					/>
-					<legend>{__('Text', 'innocode-blocks')}</legend>
+					<legend>{__('Text', 'wpd-blocks')}</legend>
 					<ColorPalette
 						colors={COLOR_SCHEMES.slice().reverse()}
 						value={color}
@@ -107,7 +107,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText
 						tagName={TITLE_TAG}
 						value={title}
-						placeholder={__('Title', 'innocode-blocks')}
+						placeholder={__('Title', 'wpd-blocks')}
 						onChange={onTitleChange}
 						className={`${BLOCK_CLASS_NAME}__title`}
 					/>
@@ -117,7 +117,7 @@ export default function Edit({ attributes, setAttributes }) {
 						tagName="div"
 						multiline="p"
 						value={description}
-						placeholder={__('Description', 'innocode-blocks')}
+						placeholder={__('Description', 'wpd-blocks')}
 						onChange={onDescriptionChange}
 						className={`${BLOCK_CLASS_NAME}__description`}
 					/>

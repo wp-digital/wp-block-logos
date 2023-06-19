@@ -1,1 +1,1 @@
-export const BLOCK_CLASS_NAME = 'innocode-block-logos';
+export const BLOCK_CLASS_NAME = 'wpd-block-logos';

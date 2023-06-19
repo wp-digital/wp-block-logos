@@ -65,9 +65,9 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		icon,
 	} = attributes;
 	const {
-		'innocode/block-logos-scaleFactor': scaleFactor,
-		'innocode/block-logos-backgroundColor': backgroundColor,
-		'innocode/block-logos-color': color,
+		'wpd/block-logos-scaleFactor': scaleFactor,
+		'wpd/block-logos-backgroundColor': backgroundColor,
+		'wpd/block-logos-color': color,
 	} = context;
 	const [isEditingURL, setIsEditingURL] = useState(false);
 	const opensLinkInNewTab = target === '_blank';
@@ -169,13 +169,15 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 		if (icon) {
 			const value = ICONS.find((item) => item.value === icon);
 
-			image = (
-				<Icon
-					icon={has(value, 'icon') ? value.icon : value.value}
-					className={`${BLOCK_CLASS_NAME}__icon`}
-					style={invert ? { filter: `invert(${invert}%)` } : undefined}
-				/>
-			);
+			if (value) {
+				image = (
+					<Icon
+						icon={has(value, 'icon') ? value.icon : value.value}
+						className={`${BLOCK_CLASS_NAME}__icon`}
+						style={invert ? { filter: `invert(${invert}%)` } : undefined}
+					/>
+				);
+			}
 		}
 	} else {
 		image =
@@ -200,8 +202,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 								onClick={open}
 								icon={<Icon icon={attachmentId ? Spinner : Logo} />}
 								iconSize={46}
-								text={__('Set logo', 'innocode-blocks')}
-								label={__('Logo placeholder', 'innocode-blocks')}
+								text={__('Set logo', 'wpd-blocks')}
+								label={__('Logo placeholder', 'wpd-blocks')}
 								className={`${BLOCK_CLASS_NAME}__upload`}
 							/>
 						)}
@@ -224,10 +226,10 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 			style={backgroundColor ? { backgroundColor } : undefined}
 		>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'innocode-blocks')} initialOpen={false}>
+				<PanelBody title={__('Settings', 'wpd-blocks')} initialOpen={false}>
 					<PanelRow>
 						<ToggleControl
-							label={__('Show caption', 'innocode-blocks')}
+							label={__('Show caption', 'wpd-blocks')}
 							checked={hasCaption}
 							onChange={onHasCaptionChange}
 						/>
@@ -235,7 +237,7 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					{!!(icon || attachmentId) && (
 						<PanelRow>
 							<RangeControl
-								label={__('Invert', 'innocode-blocks')}
+								label={__('Invert', 'wpd-blocks')}
 								value={invert}
 								onChange={onInvertChange}
 								withInputField={false}
@@ -249,21 +251,21 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					)}
 					{!!ICONS.length && (
 						<PanelRow>
-							<ToggleControl label={__('Use icon', 'innocode-blocks')} checked={hasIcon} onChange={onHasIconChange} />
+							<ToggleControl label={__('Use icon', 'wpd-blocks')} checked={hasIcon} onChange={onHasIconChange} />
 						</PanelRow>
 					)}
 					{!!ICONS.length && hasIcon && (
 						<PanelRow>
-							<IconsPicker label={__('Icon', 'innocode-blocks')} icons={ICONS} value={icon} onChange={onIconChange} />
+							<IconsPicker label={__('Icon', 'wpd-blocks')} icons={ICONS} value={icon} onChange={onIconChange} />
 						</PanelRow>
 					)}
 				</PanelBody>
 			</InspectorControls>
 			<BlockControls>
 				<ToolbarGroup>
-					{!href && <ToolbarButton icon={link} title={__('Link', 'innocode-blocks')} onClick={startLinkEditing} />}
+					{!href && <ToolbarButton icon={link} title={__('Link', 'wpd-blocks')} onClick={startLinkEditing} />}
 					{!!href && (
-						<ToolbarButton icon={linkOff} title={__('Unlink', 'innocode-blocks')} onClick={unlink} isActive={true} />
+						<ToolbarButton icon={linkOff} title={__('Unlink', 'wpd-blocks')} onClick={unlink} isActive={true} />
 					)}
 				</ToolbarGroup>
 			</BlockControls>
@@ -298,8 +300,8 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 					<RichText
 						tagName="figcaption"
 						value={caption}
-						aria-label={__('Logo caption text', 'innocode-blocks')}
-						placeholder={__('Add caption', 'innocode-blocks')}
+						aria-label={__('Logo caption text', 'wpd-blocks')}
+						placeholder={__('Add caption', 'wpd-blocks')}
 						onChange={onCaptionChange}
 						inlineToolbar
 						className={captionClassName}

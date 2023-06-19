@@ -28,17 +28,19 @@ export default function save({ attributes }) {
 
 	let image = null;
 
-	if (hasIcon) {
+	if (ICONS.length && hasIcon) {
 		if (icon) {
 			const value = ICONS.find((item) => item.value === icon);
 
-			image = (
-				<Icon
-					icon={has(value, 'icon') ? value.icon : value.value}
-					className={`${BLOCK_CLASS_NAME}__icon`}
-					style={invert ? { filter: `invert(${invert}%)` } : undefined}
-				/>
-			);
+			if (value) {
+				image = (
+					<Icon
+						icon={has(value, 'icon') ? value.icon : value.value}
+						className={`${BLOCK_CLASS_NAME}__icon`}
+						style={invert ? { filter: `invert(${invert}%)` } : undefined}
+					/>
+				);
+			}
 		}
 	} else if (url) {
 		image = (

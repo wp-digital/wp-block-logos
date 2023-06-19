@@ -7,7 +7,7 @@ import icon from './icon';
 
 import './style.scss';
 
-registerBlockType('innocode/block-logos', {
+registerBlockType('wpd/block-logos', {
 	apiVersion: 2,
 	supports: {
 		align: ['wide', 'full'],
@@ -15,9 +15,9 @@ registerBlockType('innocode/block-logos', {
 	},
 	attributes,
 	providesContext: {
-		'innocode/block-logos-scaleFactor': 'scaleFactor',
-		'innocode/block-logos-backgroundColor': 'backgroundColor',
-		'innocode/block-logos-color': 'color',
+		'wpd/block-logos-scaleFactor': 'scaleFactor',
+		'wpd/block-logos-backgroundColor': 'backgroundColor',
+		'wpd/block-logos-color': 'color',
 	},
 	edit: Edit,
 	save,

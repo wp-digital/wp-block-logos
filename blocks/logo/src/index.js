@@ -7,19 +7,15 @@ import icon from './icon';
 
 import './style.scss';
 
-registerBlockType('innocode/block-logo', {
+registerBlockType('wpd/block-logo', {
 	apiVersion: 2,
 	supports: {
 		className: false,
 	},
 	attributes,
-	usesContext: [
-		'innocode/block-logos-scaleFactor',
-		'innocode/block-logos-backgroundColor',
-		'innocode/block-logos-color',
-	],
+	usesContext: ['wpd/block-logos-scaleFactor', 'wpd/block-logos-backgroundColor', 'wpd/block-logos-color'],
 	edit: Edit,
 	save,
 	icon,
-	parent: ['innocode/block-logos', 'innocode/block-slide'],
+	parent: ['wpd/block-logos', 'wpd/block-slide'],
 });
