@@ -236,19 +236,17 @@ export default function Edit({ attributes, setAttributes, isSelected, context })
 						/>
 					</PanelRow>
 					{!!(icon || attachmentId) && (
-						<PanelRow>
-							<RangeControl
-								label={__('Invert', 'wpd-blocks')}
-								value={invert}
-								onChange={onInvertChange}
-								withInputField={false}
-								allowReset
-								resetFallbackValue={0}
-								min={0}
-								max={100}
-								step={1}
-							/>
-						</PanelRow>
+						<RangeControl
+							label={__('Invert', 'wpd-blocks')}
+							value={invert}
+							onChange={onInvertChange}
+							withInputField={false}
+							allowReset
+							resetFallbackValue={0}
+							min={0}
+							max={100}
+							step={1}
+						/>
 					)}
 					{!!ICONS.length && (
 						<PanelRow>
