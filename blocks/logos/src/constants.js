@@ -1,6 +1,8 @@
 import { applyFilters } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 
+export const BLOCK_CLASS_NAME = 'wpd-block-logos';
+
 export const TITLE_TAG = applyFilters('wpd.block-logos.title.tag', 'h3');
 
 export const HAS_TITLE_DEFAULT = applyFilters('wpd.block-logos.has_title.default', true);
@@ -24,3 +26,5 @@ export const BACKGROUND_COLOR_DEFAULT = applyFilters('wpd.block-logos.background
 export const COLOR_DEFAULT = applyFilters('wpd.block-logos.color.default', undefined);
 
 export const ALLOWED_BLOCKS = ['wpd/block-logo'];
+
+export const TEMPLATE = applyFilters('wpd.block-logos.template', [['wpd/block-logo', {}]]);

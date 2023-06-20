@@ -1,5 +1,4 @@
-import { BLOCK_CLASS_NAME } from './constants';
-import { HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT, HAS_ICON_DEFAULT } from './constants/editor';
+import { BLOCK_CLASS_NAME, HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT, HAS_ICON_DEFAULT } from './constants';
 
 export default {
 	href: {

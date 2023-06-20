@@ -2,8 +2,7 @@ import { has, isEmpty } from 'lodash';
 
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { BLOCK_CLASS_NAME } from './constants';
-import { HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT, HAS_ICON_DEFAULT, ICONS } from './constants/editor';
+import { BLOCK_CLASS_NAME, HAS_CAPTION_DEFAULT, CAPTION_ALIGNMENT_DEFAULT, HAS_ICON_DEFAULT, ICONS } from './constants';
 import { Icon } from '@wordpress/components';
 
 export default function save({ attributes }) {

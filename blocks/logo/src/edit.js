@@ -29,8 +29,9 @@ import { __ } from '@wordpress/i18n';
 
 import IconsPicker from '@innocode-digital/wp-component-icons-picker';
 
-import { BLOCK_CLASS_NAME, NEW_TAB_REL } from './constants';
 import {
+	BLOCK_CLASS_NAME,
+	NEW_TAB_REL,
 	SIZE,
 	ALLOWED_TYPES,
 	WIDTH_BASE,
@@ -38,7 +39,7 @@ import {
 	CAPTION_ALIGNMENT_DEFAULT,
 	HAS_ICON_DEFAULT,
 	ICONS,
-} from './constants/editor';
+} from './constants';
 
 import Logo from './icon';
 

@@ -9,8 +9,8 @@ import {
 import { PanelBody, PanelRow, RangeControl, ToggleControl, ColorPalette } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-import { BLOCK_CLASS_NAME } from './constants';
 import {
+	BLOCK_CLASS_NAME,
 	TITLE_TAG,
 	HAS_TITLE_DEFAULT,
 	HAS_DESCRIPTION_DEFAULT,
@@ -20,7 +20,8 @@ import {
 	BACKGROUND_COLOR_DEFAULT,
 	COLOR_DEFAULT,
 	ALLOWED_BLOCKS,
-} from './constants/editor';
+	TEMPLATE,
+} from './constants';
 
 import './editor.scss';
 
@@ -127,7 +128,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<BlockControls>
 					<AlignmentToolbar value={alignment} onChange={onAlignmentChange} />
 				</BlockControls>
-				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} orientation="horizontal" />
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} orientation="horizontal" template={TEMPLATE} />
 			</div>
 		</div>
 	);

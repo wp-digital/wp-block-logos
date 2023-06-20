@@ -1,5 +1,9 @@
 import { applyFilters } from '@wordpress/hooks';
 
+export const BLOCK_CLASS_NAME = 'wpd-block-logo';
+
+export const NEW_TAB_REL = 'noreferrer noopener';
+
 export const SIZE = applyFilters('wpd.block-logo.size', 'wpd-block-logo');
 export const ALLOWED_TYPES = applyFilters('wpd.block-logo.allowed_types', ['image']);
 export const WIDTH_BASE = applyFilters('wpd.block-logo.width_base', 75);

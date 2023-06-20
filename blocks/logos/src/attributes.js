@@ -1,11 +1,11 @@
-import { BLOCK_CLASS_NAME } from './constants';
 import {
+	BLOCK_CLASS_NAME,
 	HAS_TITLE_DEFAULT,
 	HAS_DESCRIPTION_DEFAULT,
 	SCALE_FACTOR_DEFAULT,
 	BACKGROUND_COLOR_DEFAULT,
 	COLOR_DEFAULT,
-} from './constants/editor';
+} from './constants';
 
 export default {
 	hasTitle: {
