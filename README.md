@@ -6,7 +6,7 @@ List of logos with links.
 
 ### Demo
 
-[Logos Block](https://blocks.wpd.digital/logos-block/)
+[Logos Block](https://demo.wpd.digital/logos-block/)
 
 ### Install
 
