@@ -1,4 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
+import { __, sprintf } from '@wordpress/i18n';
 
 import Edit from './edit';
 import save from './save';
@@ -22,4 +23,27 @@ registerBlockType('wpd/block-logos', {
 	edit: Edit,
 	save,
 	icon,
+	example: {
+		attributes: {
+			title: __('Logos', 'wpd-blocks'),
+			hasDescription: true,
+			description: sprintf('<p>%s</p>', __('This is a description', 'wpd-blocks')),
+		},
+		innerBlocks: [
+			{
+				name: 'wpd/block-logo',
+				attributes: {
+					hasCaption: true,
+					caption: sprintf('<p>%s</p>', __('This is a caption', 'wpd-blocks')),
+				},
+			},
+			{
+				name: 'wpd/block-logo',
+				attributes: {
+					hasCaption: true,
+					caption: sprintf('<p>%s</p>', __('This is a caption', 'wpd-blocks')),
+				},
+			},
+		],
+	},
 });

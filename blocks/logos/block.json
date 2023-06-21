@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "wpd/block-logos",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"title": "Logos",
 	"category": "design",
 	"description": "List for logos.",
